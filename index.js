@@ -1,17 +1,18 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const sharp = require('sharp');
+const conf = require("./config.json");
 
 (async () => {
     const browser = await puppeteer.launch({ headless: 'new' });
     const page = await browser.newPage();
     await page.setViewport({ width: 1920, height: 1080 });
-    await page.goto('');
-    await page.type('#login', '');
-    await page.type('#password', '');
+    await page.goto(conf.url_login);
+    await page.type('#login', conf.user);
+    await page.type('#password', conf.pass);
     await page.click('#btnSeConnecter');
     console.log('Connected');
-    await page.goto('');
+    await page.goto(conf.page_pl);
     const screenshot = await page.screenshot();
     // Save the image
     fs.writeFileSync('screenshot.png', screenshot);
