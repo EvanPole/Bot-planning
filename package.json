@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "puppeteer": "^20.5.0",
+    "sharp": "^0.32.1"
+  },
+  "name": "bot-iia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
